@@ -1,0 +1,14 @@
+@import "./base";
+
+/*Acá van los componentes, antes de pages*/
+@import "./components/navbar";
+@import "./components/btn";
+@import "./components/footer";
+
+
+/*Acá van los partials*/
+@import "./pages/index";
+@import "../scss/pages/sinopsis";
+@import "../scss/pages/personajes";
+@import "../scss/pages/trailers";
+@import "../scss/pages/historia";

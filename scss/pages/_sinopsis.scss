@@ -1,0 +1,432 @@
+.img__sinopsis {
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translatey(-50%);
+    z-index: -1;
+}
+
+/*header*/
+.header__img {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    overflow: hidden;
+}
+
+.header__text__sinopsis {
+    flex-direction: row;
+    text-align: left;
+    margin-top: 5%;
+    padding: 10%;
+
+    p {
+        color: whitesmoke;
+        font-size: 1.2rem;
+        text-shadow: 0 0 0.2em rgb(19, 19, 19);
+    }
+}
+
+/*Main*/
+.main__container__sinopsis {
+    display: grid;
+    @include grilla (repeat(6, 1fr), repeat(8, auto));
+    gap: 15px 15px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "sinopsis__text sinopsis__text sinopsis__text sinopsis__text sinopsis__text sinopsis__text"
+        "sinopsis__text sinopsis__text sinopsis__text sinopsis__text sinopsis__text sinopsis__text"
+        "sinopsis__cast__title sinopsis__cast__title sinopsis__cast__title sinopsis__cast__title sinopsis__cast__title sinopsis__cast__title"
+        ". sinopsis__cast sinopsis__cast sinopsis__cast sinopsis__cast ."
+        ". sinopsis__cast sinopsis__cast sinopsis__cast sinopsis__cast ."
+        ". sinopsis__cast sinopsis__cast sinopsis__cast sinopsis__cast ."
+        ". sinopsis__cast sinopsis__cast sinopsis__cast sinopsis__cast ."
+        "sinopsis__personajes sinopsis__personajes sinopsis__personajes sinopsis__personajes sinopsis__personajes sinopsis__personajes";
+    background-color: $color-primario;
+}
+
+.sinopsis__text {
+    grid-area: sinopsis__text;
+    padding: 5% 15% 5%;
+    background-color: $color-oscuro;
+
+    &.sinopsis__text__info {
+        margin-top: 5%;
+        border-left: solid 2px $color-complementario;
+        border-right: solid 2px $color-complementario;
+    }
+
+    p {
+        font-size: 1.2rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+}
+
+.sinopsis__cast__title {
+    grid-area: sinopsis__cast__title;
+    text-align: center;
+    padding-top: 5%;
+}
+
+.sinopsis__cast {
+    display: grid;
+    @include grilla (repeat(3, 1fr), repeat(3, auto));
+    gap: 10px 10px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "img__cast1 img__cast2 img__cast3"
+        "img__cast4 img__cast5 img__cast6"
+        "img__cast7 img__cast8 img__cast9";
+    grid-area: sinopsis__cast;
+    justify-content: center;
+}
+
+.img__cast1 {
+    grid-area: img__cast1;
+}
+
+.img__cast2 {
+    grid-area: img__cast2;
+}
+
+.img__cast3 {
+    grid-area: img__cast3;
+}
+
+.img__cast4 {
+    grid-area: img__cast4;
+}
+
+.img__cast5 {
+    grid-area: img__cast5;
+}
+
+.img__cast6 {
+    grid-area: img__cast6;
+}
+
+.img__cast7 {
+    grid-area: img__cast7;
+}
+
+.img__cast8 {
+    grid-area: img__cast8;
+}
+
+.img__cast9 {
+    grid-area: img__cast9;
+}
+
+.img__cast1,
+.img__cast2,
+.img__cast3,
+.img__cast4,
+.img__cast5,
+.img__cast6,
+.img__cast7,
+.img__cast8,
+.img__cast9 {
+    position: relative;
+
+    .sinopsis_cast_img {
+        border-radius: 16px;
+        width: 100%;
+        filter: grayscale(100%);
+        transition: all 500ms ease-out;
+        cursor: pointer;
+    }
+}
+
+.img__cast1 figure .img__info,
+.img__cast2 figure .img__info,
+.img__cast3 figure .img__info,
+.img__cast4 figure .img__info,
+.img__cast5 figure .img__info,
+.img__cast6 figure .img__info,
+.img__cast7 figure .img__info,
+.img__cast8 figure .img__info {
+    width: 90%;
+    height: 89%;
+    position: absolute;
+    top: 0;
+    transition: all 500ms ease-out;
+    background: rgb(22, 67, 126, 0.8);
+    border-radius: 16px;
+    opacity: 0;
+    visibility: hidden;
+    text-align: left;
+    padding: 5%;
+}
+
+.img__cast9 figure .img__info__bonus {
+    height: 88.5%;
+    width: 90%;
+    position: absolute;
+    top: 0;
+    transition: all 500ms ease-out;
+    background: rgba(235, 18, 18, 0.733);
+    border-radius: 16px;
+    opacity: 0;
+    visibility: hidden;
+    text-align: left;
+    padding: 5%;
+
+    .button__img .header__button {
+        background-color: $color-secundario;
+        color: $color-primario;
+        margin-top: 30%;
+    }
+}
+
+.img__cast1 figure:hover>.img__info,
+.img__cast2 figure:hover>.img__info,
+.img__cast3 figure:hover>.img__info,
+.img__cast4 figure:hover>.img__info,
+.img__cast5 figure:hover>.img__info,
+.img__cast6 figure:hover>.img__info,
+.img__cast7 figure:hover>.img__info,
+.img__cast8 figure:hover>.img__info {
+    opacity: 1;
+    visibility: visible;
+
+    h3 {
+        color: $color-primario;
+        font-size: 1.2rem;
+    }
+
+    .button__img {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .button__img .header__button {
+        background-color: $color-primario;
+        color: $color-complementario;
+        margin-top: 30%;
+        width: 150px;
+    }
+
+    .button__img .header__button a {
+        color: $color-complementario;
+    }
+}
+
+.img__cast9 figure:hover>.img__info__bonus {
+    opacity: 1;
+    visibility: visible;
+
+    h3 {
+        color: $color-primario;
+        font-size: 1.2rem;
+    }
+
+    .button__img {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .button__img .header__button {
+        margin-top: 30%;
+        color: $color-secundario;
+        transition: all .8s;
+        width: 150px;
+    }
+}
+
+.actor__name {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-top: -95%;
+    padding: 10px;
+    color: $color-primario;
+    font-weight: 600;
+    text-shadow: 0 0 0.2em rgb(19, 19, 19);
+
+    h3 {
+        color: $color-primario;
+        font-size: 1rem;
+    }
+}
+
+.sinopsis__personajes {
+    display: grid;
+    @include grilla (repeat(2, 1fr), repeat(1, auto));
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "sinopsis__personajes__info sinopsis__personajes__img";
+    grid-area: sinopsis__personajes;
+    padding: 10%;
+}
+
+.sinopsis__personajes__info {
+    grid-area: sinopsis__personajes__info;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 90%;
+
+    .header__button {
+        margin-top: 10%;
+    }
+}
+
+.sinopsis__personajes__img {
+    grid-area: sinopsis__personajes__img;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    .personajes__img {
+        width: 80%;
+    }
+}
+
+/*Responsive*/
+@media (max-width: 768px) {
+    .img__sinopsis {
+        height: 100%;
+        z-index: -1;
+    }
+
+    .header__img {
+        width: 100vw;
+        height: 100vh;
+        align-items: center;
+    }
+
+    .main__container__sinopsis {
+        display: grid;
+        @include grilla (repeat(6, auto), repeat(8, auto));
+        gap: 15px 15px;
+        grid-auto-flow: column;
+        grid-template-areas:
+            "sinopsis__text sinopsis__text sinopsis__text sinopsis__text sinopsis__text sinopsis__text"
+            "sinopsis__text sinopsis__text sinopsis__text sinopsis__text sinopsis__text sinopsis__text"
+            "sinopsis__cast__title sinopsis__cast__title sinopsis__cast__title sinopsis__cast__title sinopsis__cast__title sinopsis__cast__title"
+            "sinopsis__cast sinopsis__cast sinopsis__cast sinopsis__cast sinopsis__cast sinopsis__cast"
+            "sinopsis__cast sinopsis__cast sinopsis__cast sinopsis__cast sinopsis__cast sinopsis__cast"
+            "sinopsis__cast sinopsis__cast sinopsis__cast sinopsis__cast sinopsis__cast sinopsis__cast"
+            "sinopsis__personajes sinopsis__personajes sinopsis__personajes sinopsis__personajes sinopsis__personajes sinopsis__personajes"
+            "sinopsis__personajes sinopsis__personajes sinopsis__personajes sinopsis__personajes sinopsis__personajes sinopsis__personajes";
+        background-color: $color-primario;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .sinopsis__text {
+        padding: 10%;
+    }
+
+    .sinopsis__cast {
+        display: grid;
+        @include grilla (repeat(1, auto), repeat(9, auto));
+        gap: 10px 10px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "img__cast1"
+            "img__cast2"
+            "img__cast3"
+            "img__cast4"
+            "img__cast5"
+            "img__cast6"
+            "img__cast7"
+            "img__cast8"
+            "img__cast9";
+        padding: 5%;
+        grid-area: sinopsis__cast;
+    }
+
+    .img__cast1,
+    .img__cast2,
+    .img__cast3,
+    .img__cast4,
+    .img__cast5,
+    .img__cast6,
+    .img__cast7,
+    .img__cast8,
+    .img__cast9 {
+
+        .sinopsis_cast_img {
+            width: 100%;
+        }
+    }
+
+    .sinopsis__personajes {
+        display: grid;
+        @include grilla (repeat(2, auto), repeat(2, auto));
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "sinopsis__personajes__img sinopsis__personajes__img"
+            "sinopsis__personajes__info sinopsis__personajes__info";
+        grid-area: sinopsis__personajes;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        padding: 5%;
+    }
+
+    .sinopsis__personajes__img {
+        grid-area: sinopsis__personajes__img;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 5vw;
+
+        .personajes__img {
+            width: 90%;
+        }
+    }
+
+    .actor__name {
+        margin-top: -95%;
+    }
+
+    .sinopsis__personajes__info {
+        grid-area: sinopsis__personajes__info;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding: 5vw;
+        text-align: center;
+    }
+
+    .img__cast1 figure:hover>.img__info,
+    .img__cast2 figure:hover>.img__info,
+    .img__cast3 figure:hover>.img__info,
+    .img__cast4 figure:hover>.img__info,
+    .img__cast5 figure:hover>.img__info,
+    .img__cast6 figure:hover>.img__info,
+    .img__cast7 figure:hover>.img__info,
+    .img__cast8 figure:hover>.img__info {
+
+        h3 {
+            color: $color-primario;
+            font-size: 1rem;
+        }
+    }
+
+    .img__cast9 figure:hover>.img__info__bonus {
+        h3 {
+            color: $color-primario;
+            font-size: 1rem;
+        }
+    }
+}

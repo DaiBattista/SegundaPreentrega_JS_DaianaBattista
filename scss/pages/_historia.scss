@@ -1,0 +1,416 @@
+.main__container__historia {
+    display: flex;
+    width: 100%;
+    background-color: $color-complementario;
+}
+
+.historia__video__container {
+    display: grid;
+    @include grilla (repeat(2, 1fr), repeat(4, auto));
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "video__title video__title"
+        "historia__video historia__video"
+        "historia__lanzamiento historia__lanzamiento__info"
+        "historia__juego historia__juego";
+    justify-content: center;
+    align-items: center;
+}
+
+.video__title {
+    grid-area: video__title;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-bottom: 2%;
+
+    h2 {
+        color: $color-oscuro;
+    }
+
+    p {
+        color: $color-primario;
+    }
+}
+
+.historia__video {
+    grid-area: historia__video;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 5%;
+
+    .historia__v {
+        width: 80vw;
+        border-radius: 24px;
+    }
+}
+
+.historia__lanzamiento {
+    grid-area: historia__lanzamiento;
+    padding: 20%;
+
+    h2 {
+        color: $color-oscuro;
+    }
+
+    p {
+        color: $color-primario;
+    }
+
+    .juego__img {
+        width: 90%;
+        border-radius: 24px;
+        margin-top: 5%;
+    }
+}
+
+.historia__lanzamiento__info {
+    grid-area: historia__lanzamiento__info;
+    padding: 20% 20% 20% 0;
+
+    h3 {
+        color: $color-oscuro;
+    }
+
+    p {
+        color: $color-primario;
+    }
+}
+
+.historia__juego {
+    grid-area: historia__juego;
+    background-color: $color-oscuro;
+    padding: 5%;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow-y: hidden;
+
+    h2 {
+        font-size: 2.5em;
+        margin-top: 5%;
+        margin-bottom: -3%;
+    }
+
+    p {
+        font-size: 0.8em;
+        margin-top: -5%;
+    }
+}
+
+/*pantalla incial*/
+
+#pantalla-inicial {
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    padding: 5%;
+}
+
+#pantalla-inicial {
+    margin: 20px 0;
+}
+
+.btn {
+    justify-content: center;
+    border: none;
+    background: $color-secundario;
+    color: $color-primario;
+    padding: 10px 20px;
+    border-radius: 24px;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    cursor: pointer;
+    transition: all 0.8s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+/* PANTALLA juego */
+#pantalla-juego {
+    display: none;
+}
+
+.pantalla-juego {
+    max-width: 100%;
+    margin: 50px auto;
+    text-align: center;
+    margin-top: 10%;
+}
+
+.pantalla-juego img {
+    max-width: 100%;
+    width: 100%;
+}
+
+.opciones {
+    max-width: 400px;
+    margin: auto;
+}
+
+.opcion {
+    display: flex;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    margin: 30px auto;
+    border-radius: 8px;
+    cursor: pointer;
+
+    .nombre {
+        font-size: 0.8em;
+    }
+}
+
+.opcion .letra {
+    background-color: $color-secundario;
+    width: 35px;
+    height: 35px;
+    font-size: 1em;
+    font-weight: bold;
+    color: $color-primario;
+    border-radius: 50%;
+    line-height: 20px;
+    border: 5px solid $color-oscuro;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+
+}
+
+.opcion .nombre {
+    background: #fff;
+    width: 400px;
+    height: 10px;
+    font-size: 1em;
+    position: absolute;
+    border-radius: 24px;
+    margin-left: 20px;
+    padding: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.opcion .nombreAcertada {
+    background-color: yellowgreen;
+    color: #fff;
+}
+
+.opcion .letraAcertada {
+    background-color: yellowgreen;
+    color: #fff;
+}
+
+.opcion .nombreNoAcertada {
+    background-color: darkred;
+    color: #fff;
+}
+
+.opcion .letraNoAcertada {
+    background-color: darkred;
+    color: #fff;
+}
+
+/* PANTALLA final */
+#pantalla-final {
+    display: none;
+    text-align: center;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        font-size: 1.5em;
+        line-height: 1.6em;
+        display: flex;
+        justify-content: flex-end;
+        align-items: baseline;
+    }
+}
+
+#pantalla-final #numCorrectas {
+    background-color: chartreuse;
+    color: #fff;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    margin-top: 25%;
+    justify-content: center;
+    margin-left: 15px;
+}
+
+#pantalla-final #numIncorrectas {
+    background-color: darkred;
+    color: #fff;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 4px solid #fff;
+    justify-content: center;
+    align-items: center;
+    align-items: center;
+    margin-bottom: 25%;
+    margin-left: 15px;
+}
+
+/*responsive*/
+@media (max-width: 920px) {
+    .historia__video__container {
+        display: grid;
+        @include grilla (repeat(2, 1fr), repeat(5, auto));
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "video__title video__title"
+            "historia__video historia__video"
+            "historia__lanzamiento historia__lanzamiento"
+            "historia__lanzamiento__info historia__lanzamiento__info"
+            "historia__juego historia__juego";
+        justify-content: center;
+        align-items: center;
+    }
+
+    .video__title {
+        grid-area: video__title;
+        padding: 5%;
+        text-align: center;
+    }
+
+    .historia__video {
+        grid-area: historia__video;
+    }
+
+    .historia__lanzamiento {
+        grid-area: historia__lanzamiento;
+        width: 80%;
+        justify-content: center;
+        text-align: center;
+        padding: 10%;
+    }
+
+    .historia__lanzamiento__info {
+        grid-area: historia__lanzamiento__info;
+        padding: 10%;
+    }
+
+    .historia__juego {
+        grid-area: historia__juego;
+        padding: 5%;
+
+        h2 {
+            font-size: 1em;
+        }
+
+        p {
+            font-size: 0.5em;
+        }
+    }
+
+    .opcion {
+        display: flex;
+        position: relative;
+        align-items: center;
+        text-align: left;
+        margin: 30px auto;
+        border-radius: 8px;
+        cursor: pointer;
+    
+        .nombre {
+            font-size: 0.8em;
+        }
+    }
+
+    .opcion .letra {
+        background-color: $color-secundario;
+        width: 35px;
+        height: 35px;
+        font-size: 1em;
+        font-weight: bold;
+        color: $color-primario;
+        border-radius: 50%;
+        line-height: 20px;
+        border: 5px solid $color-oscuro;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+    
+    }
+    
+    .opcion .nombre {
+        background: #fff;
+        width: 70%;
+        height: auto;
+        font-size: 1em;
+        position: absolute;
+        border-radius: 24px;
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 20px;
+        font-size: 0.8em;
+        padding-left: 25%;
+
+    }
+
+    /* PANTALLA final */
+#pantalla-final {
+    display: none;
+    text-align: center;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        font-size: 1.5em;
+        line-height: 1.6em;
+        display: flex;
+        justify-content: flex-end;
+        align-items: baseline;
+    }
+}
+
+.opcion .nombreAcertada {
+    background-color: yellowgreen;
+    color: #fff;
+}
+
+.opcion .letraAcertada {
+    background-color: yellowgreen;
+    color: #fff;
+}
+
+.opcion .nombreNoAcertada {
+    background-color: darkred;
+    color: #fff;
+}
+
+.opcion .letraNoAcertada {
+    background-color: darkred;
+    color: #fff;
+}
+
+.historia__video {
+    .historia__v {
+        width: 90vw;
+        border-radius: 16px;
+    }
+}
+
+}

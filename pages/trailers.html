@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/dc5385c7a1.js" crossorigin="anonymous"></script>
+    <meta name="description"
+        content="Super Mario Bros: La película. Película de animación basada en la franquicia de videojuegos Super Mario Bros. de Nintendo. Estará producida por Shigeru Miyamoto, creador de la licencia, y la producirá y animará Illumination Entertainment">
+    <meta name="robots" content="index, follow">
+    <title>The Super Mario Bros Movie</title>
+</head>
+
+<body>
+    <header>
+        <input type="checkbox" id="check">
+        <label for="check" class="see__menu">
+            ≡
+        </label>
+        <nav class="nav__menu">
+            <a href="../index.html">Home</a>
+            <a href="./sinopsis.html">sinopsis</a>
+            <a href="./personajes.html">personajes</a>
+            <a href="#" class="active">trailers</a>
+            <a href="./historia.html">historia</a>
+            <a href="./tienda.html">tienda</a>
+            <label for="check" class="hide__menu">
+                ×
+            </label>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <figure class="img__personajes">
+                <img src="../img/trailers_movie.jpg" alt="Mario, corriendo en un campo lleno de Toads"
+                    class="img__personaje__cover">
+            </figure>
+        </section>
+        <section class="header__img">
+            <div class="header__text__personajes">
+                <h2>Trailers</h2>
+                <p>Si eres un gran seguidor de Mario o si acabas de conocerlo hoy, ¡has llegado al lugar correcto!
+                    Descubre todo acerca de esta talentosa maravilla con bigotes y mira los trailes de su nueva
+                    película.</p>
+            </div>
+        </section>
+        <section class="main__container">
+            <div class="main__trailers">
+                <div class="trailer__thumbnails1">
+                    <figure>
+                        <a href="#oficial" id="oficial_btn"><img class="main__img" src="../img/mario_trailer1.jpg"
+                                alt="Trailer pelicula de Mario oficial"></a>
+                        <figcaption class="main__img__fig">
+                            <h3>The Super Mario Bros. Movie</h3>
+                            <h4>Oficial Trailer</h4>
+                    </figure>
+                </div>
+                <div class="trailer__thumbnails2">
+                    <figure>
+                        <a href="#teaser" id="teaser_btn"><img class="main__img" src="../img/mario_trailer2.jpg"
+                                alt="Trailer pelicula de Mario teaser"></a>
+                        <figcaption class="main__img__fig">
+                            <h3>The Super Mario Bros. Movie</h3>
+                            <h4>Final Trailer</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="trailer__thumbnails3">
+                    <figure>
+                        <a href="#final" id="final_btn"><img class="main__img" src="../img/mario_trailer3.jpg"
+                                alt="Trailer pelicula de Mario final"></a>
+                        <figcaption class="main__img__fig">
+                            <h3>The Super Mario Bros. Movie</h3>
+                            <h4>Teaser Trailer</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+            <div class="main__video" id="oficial">
+                <video src="../media/trailer_oficial.mp4" class="video__view" controls
+                    poster="../img/mario_trailer1.jpg"></video>
+            </div>
+            <div class="main__video2" id="teaser">
+                <video src="../media/trailer_final.mp4" class="video__view" controls
+                    poster="../img/mario_trailer2.jpg"></video>
+            </div>
+            <div class="main__video3" id="final">
+                <video src="../media/trailer_teaser.mp4" class="video__view" controls
+                    poster="../img/mario_trailer3.jpg"></video>
+            </div>
+        </section>
+    </main>
+    <footer class="footer__container">
+        <div class="container__info">
+            <div class="container__info__row">
+                <div class="footer__col">
+                    <h4>¡Naveguemos!</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="./sinopsis.html">Sinopsis</a></li>
+                        <li><a href="./personajes.html">Personajes</a></li>
+                        <li><a href="./trailers.html">Trailers</a></li>
+                        <li><a href="./historia.html">Historia</a></li>
+                        <li><a href="./tienda.html">Tienda</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4>Redes sociales</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/supermariomovie/"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/supermariomovie"><i class="fa-brands fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/supermariomovie"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer__col">
+                    <h4>Copyrigths</h4>
+                    <p>
+                        Game trademarks and copyrights are properties of their respective owners. Nintendo
+                        properties are trademarks of Nintendo. © 2020 Nintendo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="../js/script_trailer.js"></script>
+</body>
+
+</html>

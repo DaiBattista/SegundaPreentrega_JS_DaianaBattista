@@ -1,0 +1,182 @@
+/*Partial base: reseteos, declaración de variables, mixing, clases de utilidad. Declaraciones generales*/
+$color-primario: #E6BAAD;
+$color-oscuro: #DA9986;
+$color-secundario: #0A66C2;
+$color-complementario: #16437E;
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    overflow-x: hidden;
+}
+
+/*body*/
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: rgb(230, 186, 173);
+}
+
+@mixin grilla ($columns, $rows) {
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 3.5rem;
+    color: $color-secundario;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 2rem;
+    color: $color-complementario;
+}
+
+h3 {
+    font-weight: 700;
+    font-size: 1rem;
+    color: $color-secundario;
+}
+
+h4 {
+    font-weight: 400;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    color: $color-secundario;
+}
+
+p {
+    color: $color-complementario;
+    font-weight: 300;
+}
+
+ul {
+    list-style: none;
+}
+
+@media (max-width: 1320px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    h4 {
+        font-size: 1rem;
+        font-weight: 300;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+}
+
+@media (max-width: 920px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    h4 {
+        font-size: 0.8rem;
+        font-weight: 300;
+        letter-spacing: 0.3rem;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    h4 {
+        font-size: 1rem;
+        font-weight: 300;
+    }
+
+    p {
+        font-size: 1rem;
+    }
+
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    h3 {
+        font-size: 1rem;
+    }
+
+    h4 {
+        font-size: 0.8rem;
+        font-weight: 300;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 280px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    h3 {
+        font-size: 0.9rem;
+    }
+
+    h4 {
+        font-size: 0.5rem;
+        font-weight: 300;
+    }
+
+    p {
+        font-size: 0.8rem;
+    }
+}

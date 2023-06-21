@@ -1,0 +1,133 @@
+.main__trailers {
+    grid-area: 1 / 1 / 7 / 3;
+    display: flex;
+    flex-direction: column;
+    padding: 25% 0 25% 25%;
+    position: relative;
+    gap: 20px;
+}
+
+.trailer__thumbnails1 {
+    grid-area: 1 / 1 / 2 / 3;
+    transition: 0.8s;
+    cursor: pointer;
+
+
+    &:hover {
+        filter: saturate(180%);
+    }
+}
+
+.trailer__thumbnails2 {
+    grid-area: 2 / 1 / 3 / 3;
+    transition: 0.8s;
+    cursor: pointer;
+
+    &:hover {
+        filter: saturate(180%);
+    }
+}
+
+.trailer__thumbnails3 {
+    grid-area: 3 / 1 / 4 / 3;
+    transition: 0.8s;
+    cursor: pointer;
+
+    &:hover {
+        filter: saturate(180%);
+    }
+}
+
+.main__video,
+.main__video2,
+.main__video3 {
+    grid-area: 1 / 3 / 7 / 7;
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+    margin-top: 9.5%;
+    width: 60vw;
+
+
+    &#oficial {
+        transition: 0.8s;
+    }
+
+    &#teaser {
+        display: none;
+        transition: 0.8s;
+    }
+
+    &#final {
+        display: none;
+        transition: 0.8s;
+    }
+
+    .video__view {
+        width: 90%;
+        border-radius: 24px;
+    }
+}
+
+
+/*Responsive*/
+@media (max-width: 768px) {
+    .main__trailers {
+        display: flex;
+        flex-direction: column;
+        padding: 5%;
+        gap: 20px;
+    }
+
+    .trailer__thumbnails1 {
+        grid-area: 1 / 1 / 2 / 2;
+        display: flex;
+        flex-direction: column;
+        margin-top: 70%;
+
+        &.main__img {
+            width: 90vw;
+            border-radius: 8px;
+        }
+    }
+
+    .trailer__thumbnails2 {
+        grid-area: 2 / 1 / 3 / 2;
+        display: flex;
+        flex-direction: column;
+
+        &.main__img {
+            width: 90vw;
+            border-radius: 8px;
+        }
+    }
+
+    .trailer__thumbnails3 {
+        grid-area: 3 / 1 / 4 / 2;
+        display: flex;
+        flex-direction: column;
+
+        &.main__img {
+            width: 90vw;
+            border-radius: 8px;
+        }
+    }
+
+    .main__video,
+    .main__video2,
+    .main__video3 {
+        grid-area: 1 / 1 / 4 / 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 5%;
+        width: 97%;
+    }
+
+    .video__view {
+        width: 90%;
+        border-radius: 24px;
+    }
+}

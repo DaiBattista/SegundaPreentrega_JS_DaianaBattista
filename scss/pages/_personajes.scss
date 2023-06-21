@@ -1,0 +1,256 @@
+.img__personajes {
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translatey(-50%);
+    z-index: -1;
+}
+
+/*header*/
+.header__img {
+    display: flex;
+    flex-wrap: wrap;
+    width: 50vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    overflow: hidden;
+}
+
+.header__text__personajes {
+    flex-direction: row;
+    text-align: left;
+    margin-top: 5%;
+    padding: 10%;
+
+    h2 {
+        color: $color-primario;
+        text-shadow: 0 0 0.2em rgb(19, 19, 19);
+    }
+
+    p {
+        color: whitesmoke;
+        font-size: 1rem;
+        text-shadow: 0 0 0.2em rgb(19, 19, 19);
+    }
+}
+
+/*Main*/
+.main__container__personajes {
+    background-color: $color-primario;
+    padding: 5%;
+}
+
+.personaje__tab {
+    padding: 1%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.tab-title {
+    border-radius: 8px;
+    height: 100%;
+
+    h2 {
+        color: $color-primario;
+    }
+}
+
+.tab-title__bonus {
+    border-radius: 8px;
+    height: 100%;
+}
+
+.tab-container {
+    display: flex;
+    align-items: center;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
+    margin-top: -1%;
+    height: 100%;
+
+    .personaje__img {
+        width: 50%;
+
+        .img__p {
+            width: 100%;
+        }
+
+        .img__p__bonus {
+            width: 60%;
+            margin-left: 15%;
+            margin-top: 5%;
+        }
+    }
+
+    .personaje__info {
+        width: 50%;
+        padding: 2%;
+        height: 100%;
+    }
+
+    p {
+        color: $color-primario;
+        font-size: 0.8rem;
+    }
+
+    h3 {
+        color: $color-oscuro;
+        padding-top: 5%;
+        text-transform: uppercase;
+    }
+}
+
+.main__container__personajes input {
+    display: none;
+}
+
+.main__container__personajes .tab {
+    overflow: hidden;
+}
+
+.main__container__personajes .tab-container {
+    max-height: 0;
+    padding: 0 1em;
+    transition: all 0.8s;
+    background: $color-complementario;
+}
+
+.main__container__personajes input:checked~.tab-container {
+    max-height: 100vh;
+    padding: 1em;
+    color: #3c3c3c
+}
+
+.main__container__personajes .tab-title {
+    display: flex;
+    padding: 4.5em;
+    cursor: pointer;
+    background-image: url("../img/personajes_card.jpg");
+    color: #fff;
+    justify-content: space-between;
+}
+
+.main__container__personajes .tab-title__bonus {
+    display: flex;
+    padding: 4.5em;
+    cursor: pointer;
+    background-image: url("../img/personajes_card.jpg");
+    color: #fff;
+    justify-content: space-between;
+
+    h2 {
+        color: $color-primario;
+    }
+}
+
+.main__container__personajes .tab-title:hover {
+    background: $color-complementario;
+}
+
+.main__container__personajes .tab-title__bonus:hover {
+    background: rgba(235, 18, 18);
+
+    h2 {
+        color: $color-primario;
+    }
+}
+
+.main__container__personajes .tab-title::after {
+    content: "❯";
+    transition: all 0.25s;
+}
+
+.main__container__personajes input:checked+.tab-title::after {
+    transform: rotate(90deg);
+}
+
+.cierre__pelicula {
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+    margin-top: 5%;
+}
+
+/*Responsive*/
+@media (max-width: 680px) {
+    .img__personajes {
+        height: 100%;
+        z-index: -1;
+    }
+
+    .header__img {
+        width: 100vw;
+        height: 100vh;
+        align-items: center;
+    }
+
+    .main__container__personajes .tab-title {
+        background-image: url("../../img/personajes_card.jpg");
+        padding: 1em;
+    }
+
+    .main__container__personajes .tab-title__bonus {
+        background-image: url("../../img/personajes_card.jpg");
+        padding: 1em;
+    }
+
+    .tab-title__bonus {
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+    }
+
+    .tab-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        border-bottom-right-radius: 8px;
+        border-bottom-left-radius: 8px;
+        margin-top: -2.5%;
+        padding: 15%;
+        min-height: 100%;
+
+        p {
+            font-size: 0.8rem;
+        }
+
+        .personaje__img {
+            height: 90%;
+            text-align: center;
+
+            .img__p {
+                width: 60%;
+            }
+
+            .img__p__bonus {
+                width: 35%;
+            }
+        }
+
+        .personaje__info {
+            width: 100%;
+            padding: 2%;
+        }
+    }
+
+        .personaje__img {
+            width: 70%;
+            text-align: center;
+
+            .img__p {
+                width: 100%;
+            }
+
+            .img__p__bonus {
+                width: 40%;
+            }
+        }
+
+        .personaje__info {
+            width: 100%;
+            padding: 2%;
+        }
+}

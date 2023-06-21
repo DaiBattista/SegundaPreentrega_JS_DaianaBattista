@@ -1,0 +1,100 @@
+header {
+    height: 100px;
+    padding: 0 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    a {
+        color: whitesmoke;
+        text-transform: uppercase;
+        font-size: 1.5em;
+        padding: 0 10px;
+        transition: 0.4s;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+    }
+
+    .nav__menu {
+        z-index: 100;
+        text-shadow: 0 0 0.2em rgb(82, 82, 82);
+    }
+}
+
+.logo {
+    width: 50px;
+}
+
+.see__menu,
+.hide__menu {
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    transition: 0.4s;
+    color: $color-secundario;
+}
+
+.see__menu {
+    order: 2;
+}
+
+.active {
+    color: $color-secundario;
+}
+
+.nav__menu a:hover,
+.see__menu:hover,
+.hide__menu:hover {
+    color: $color-secundario;
+    transition: 0.4s;
+}
+
+#check {
+    display: none;
+}
+
+/*Responsive*/
+@media (max-width: 768px) {
+
+    /*Header*/
+    header {
+        justify-content: flex-end;
+    }
+
+    .see__menu,
+    .hide__menu {
+        display: block;
+    }
+
+    .nav__menu {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        right: -100%;
+        top: 0;
+        text-align: center;
+        padding: 100px 0;
+        z-index: 400;
+        transition: 0.8s;
+        background-color: $color-primario;
+
+        a {
+            display: block;
+            padding: 20px;
+        }
+    }
+
+    .hide__menu {
+        position: absolute;
+        top: 28px;
+        right: 52px;
+    }
+}
+
+#check:checked~.nav__menu {
+    right: 0;
+}
+
+.logo {
+    width: 40px;
+}

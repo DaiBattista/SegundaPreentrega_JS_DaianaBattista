@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/dc5385c7a1.js" crossorigin="anonymous"></script>
+    <meta name="description"
+        content="Super Mario Bros La Película está rompiendo todos los récords en taquilla, al público general le ha encantado y esto se nota tanto en las ventas como en el éxito de canciones como Peaches, de Jack Black.">
+    <meta name="robots" content="index, follow">
+    <title>The Super Mario Bros Movie</title>
+</head>
+
+<body>
+    <header>
+        <input type="checkbox" id="check">
+        <label for="check" class="see__menu">
+            ≡
+        </label>
+        <nav class="nav__menu">
+            <a href="#" class="active">Home</a>
+            <a href="./pages/sinopsis.html">sinopsis</a>
+            <a href="./pages/personajes.html">personajes</a>
+            <a href="./pages/trailers.html">trailers</a>
+            <a href="./pages/historia.html">historia</a>
+            <a href="./pages/tienda.html">tienda</a>
+            <label for="check" class="hide__menu">
+                ×
+            </label>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <video id="video__play" class="header__video" autoplay muted playsinline loop>
+                <source src="./media/peaches_song.mp4" alt="Jack Black canta la cancion de la princesa Peach">
+                <source src="./media/peaches_song.ogg" alt="Jack Black canta la cancion de la princesa Peach">>
+                Tu navegador no soporta el formato de video
+            </video>
+        </section>
+        <section class="header__flex">
+            <div class="header__text">
+                <div class="header__logo"><img class="header__logo__img" src="./img/mario_logo.png"
+                        alt="Logo pelicula Mario"></div>
+                <div class="header__container__btn">
+                    <button class="header__button" role="button"><a href="./pages/personajes.html">Personajes
+                            →</a></button>
+                    <button id="sound__button" class="header__button">Sonido ON/OFF</button>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="main__container">
+                <div class="main__title">
+                    <h1>Super Mario: La película</h1>
+                </div>
+                <div class="main__thumbnail1">
+                    <figure>
+                        <a href='./pages/trailers.html#oficial'><img class="main__img" src="./img/mario_trailer1.jpg"
+                                alt="Trailer pelicula de Mario oficial"></a>
+                        <figcaption class="main__img__fig">
+                            <h3>The Super Mario Bros. Movie</h3>
+                            <h4>Oficial Trailer</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="main__thumbnail2">
+                    <figure>
+                        <a href='./pages/trailers.html#teaser'><img class="main__img" src="./img/mario_trailer2.jpg"
+                                alt="Trailer pelicula de Mario teaser"></a>
+                        <figcaption class="main__img__fig">
+                            <h3>The Super Mario Bros. Movie</h3>
+                            <h4>Final Trailer</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="main__thumbnail3">
+                    <figure>
+                        <a href='./pages/trailers.html#final'><img class="main__img" src="./img/mario_trailer3.jpg"
+                                alt="Trailer pelicula de Mario final"></a>
+                        <figcaption class="main__img__fig">
+                            <h3>The Super Mario Bros. Movie</h3>
+                            <h4>Teaser Trailer</h4>
+                        </figcaption>
+                    </figure>
+                </div>
+                <div class="main__form__container">
+                    <div class="img__form">
+                        <figure>
+                            <img src="./img/mario_jump.png" alt="Mario saltando" class="img__form__figure">
+                        </figure>
+                    </div>
+                    <div class="main__form__title">
+                        <h2>¡No te pierdas nada! Suscribite.</h2>
+                    </div>
+                    <form class="main__form" method="POST" id="form">
+                        <input type="text" name="nombre" class="form__field" placeholder="Nombre" id="name">
+                        <input type="text" name="apellido" class="form__field" placeholder="Apellido" id="lastname">
+                        <input type="email" name="email" class="form__field__mail" placeholder="Mail" id="mail">
+                        <div class="button__subscribe">
+                            <button class="header__button" role="button" id="boton">Suscribite</button>
+                        </div>
+                        <div class="warning">
+                            <h3 id="warnings"></h3>
+                        </div>
+                    </form>
+                </div>
+                <div class="main__title__review">
+                    <h2>Reseñas</h2>
+                </div>
+                <div class="main__img__review">
+                    <figure>
+                        <img src="./img/certified_fresh.svg" alt="Certificado fresco" class="img__review">
+                    </figure>
+                </div>
+                <div class="main__review">
+                    <p>
+                    <h3>TOMATÓMETRO</h3>
+                    <p><b>Consenso de Críticos:</b> La espectacular animación, el cariñoso homenaje a los videojuegos
+                        y un
+                        carismático elenco hacen de este filme una aventura imperdible para las audiencias en general,
+                        pero
+                        en particular para los fans.
+                        <br>
+                        <b>Calificación de Usuarios:</b> Calificación Promedio: 4.4/5
+                    </p>
+                </div>
+            </div>
+    </main>
+
+    <footer class="footer__container">
+        <div class="container__info">
+            <div class="container__info__row">
+                <div class="footer__col">
+                    <h4>¡Naveguemos!</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="./pages/sinopsis.html">Sinopsis</a></li>
+                        <li><a href="./pages/personajes.html">Personajes</a></li>
+                        <li><a href="./pages/trailers.html">Trailers</a></li>
+                        <li><a href="./pages/historia.html">Historia</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4>Redes sociales</h4>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/supermariomovie/"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/supermariomovie"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com/supermariomovie"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer__col">
+                    <h4>Copyrigths</h4>
+                    <p>
+                        Game trademarks and copyrights are properties of their respective owners. Nintendo
+                        properties are trademarks of Nintendo. © 2020 Nintendo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/scripts.js"></script>
+    <script src="./js/script_validar.js"></script>
+</body>
+
+</html>

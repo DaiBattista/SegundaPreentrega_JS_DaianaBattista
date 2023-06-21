@@ -1,0 +1,359 @@
+.header__video {
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translatey(-50%);
+    z-index: -1;
+}
+
+/*header*/
+.header__flex {
+    display: flex;
+    flex-wrap: wrap;
+    width: 98vw;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.header__text {
+    flex-direction: row;
+    text-align: center;
+    color: white;
+    margin-top: 5%;
+}
+
+.header__logo__img {
+    width: 25vw;
+}
+
+.header__container__btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.header__button {
+    & a {
+        color: whitesmoke;
+    }
+
+    & a:hover {
+        color: whitesmoke
+    }
+}
+
+/*Main*/
+.main__container {
+    display: grid;
+    @include grilla (repeat(6, 1fr), repeat(8, auto));
+    gap: 15px 15px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "main__title main__title main__title main__title main__title main__title"
+        ". main__thumbnail1 main__thumbnail1 main__thumbnail1 main__thumbnail1 ."
+        ". main__thumbnail2 main__thumbnail2 main__thumbnail3 main__thumbnail3 ."
+        "main__form__container main__form__container main__form__container main__form__container main__form__container main__form__container"
+        "main__form__container main__form__container main__form__container main__form__container main__form__container main__form__container"
+        "main__title_review main__title_review main__title_review main__title_review main__title_review main__title_review"
+        ". main__img__review main__review main__review main__review ."
+        ". main__img__review main__review main__review main__review .";
+    background-color: $color-primario;
+}
+
+.main__title {
+    grid-area: main__title;
+    display: flex;
+    justify-content: center;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    text-align: center;
+}
+
+.main__thumbnail1 {
+    grid-area: main__thumbnail1;
+}
+
+.main__thumbnail2 {
+    grid-area: main__thumbnail2;
+}
+
+.main__thumbnail3 {
+    grid-area: main__thumbnail3;
+}
+
+.main__thumbnail1,
+.main__thumbnail2,
+.main__thumbnail3 {
+    display: flex;
+    transition: 0.8s;
+    cursor: pointer;
+    filter: saturate(90%);
+    padding: 5%;
+
+    &:hover {
+        filter: saturate(160%);
+    }
+}
+
+.main__img {
+    width: 100%;
+    border-radius: 24px;
+
+    .main__img__fig {
+        padding: 15px;
+    }
+}
+
+.main__form__container {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        ". img__form main__form__title main__form__title ."
+        ". img__form main__form main__form ."
+        ". img__form main__form main__form .";
+    grid-area: main__form__container;
+    background-color: $color-oscuro;
+    margin-top: 5%;
+}
+
+.img__form {
+    grid-area: img__form;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    padding: 5%;
+    margin-top: 10%;
+}
+
+.img__form__figure {
+    width: 100%;
+}
+
+.main__form__title {
+    grid-area: main__form__title;
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.main__form {
+    grid-area: main__form;
+    width: 50vw;
+    padding: 2%;
+
+    & .form__field,
+    .form__field__mail {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        border-radius: 8px;
+        border: $color-primario solid 2px;
+        height: 5vh;
+        padding: 10px;
+        margin: 5px;
+    }
+
+    & .button__subscribe {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.form__field {
+    width: 21vw;
+}
+
+.form__field__mail {
+    width: 45.1vw;
+}
+
+.warning {
+    align-items: center;
+    text-align: center;
+    color: $color-secundario;
+    padding-top: 5%;
+}
+
+.main__title__review {
+    grid-area: main__title_review;
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.main__img__review {
+    grid-area: main__img__review;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+
+    .img__review {
+        width: 12vw;
+    }
+}
+
+.main__review {
+    grid-area: main__review;
+    padding: 10%;
+}
+
+@media (max-width: 900px) {
+    .form__field {
+        width: 20vw;
+        height: 3vh;
+    }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 5px) {
+    .header__video {
+        height: 100vh;
+        z-index: -1;
+    }
+
+    .header__logo__img {
+        width: 50vw;
+        overflow: hidden;
+    }
+
+    .header__container__btn {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+
+        .header__button {
+            font-size: 0.8rem;
+            width: 150px;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+    }
+
+    .main__container {
+        display: grid;
+        @include grilla (repeat(6, auto), repeat(8, auto));
+        gap: 20px 0px;
+        grid-template-areas:
+            "main__title main__title main__title main__title main__title main__title"
+            "main__thumbnail1 main__thumbnail1 main__thumbnail1 main__thumbnail1 main__thumbnail1 main__thumbnail1"
+            "main__thumbnail2 main__thumbnail2 main__thumbnail2 main__thumbnail2 main__thumbnail2 main__thumbnail2"
+            "main__thumbnail3 main__thumbnail3 main__thumbnail3 main__thumbnail3 main__thumbnail3 main__thumbnail3"
+            "main__form__container main__form__container main__form__container main__form__container main__form__container main__form__container"
+            "main__title__review main__title__review main__title__review main__title__review main__title__review main__title__review"
+            "main__img__review main__img__review main__img__review main__img__review main__img__review main__img__review"
+            "main__review main__review main__review main__review main__review main__review";
+    }
+
+    .main__title {
+        grid-area: main__title;
+    }
+
+    .main__thumbnail1 {
+        grid-area: main__thumbnail1;
+    }
+
+    .main__thumbnail2 {
+        grid-area: main__thumbnail2;
+    }
+
+    .main__thumbnail3 {
+        grid-area: main__thumbnail3;
+    }
+
+    .main__thumbnails1,
+    .main__thumbnails2,
+    .main__thumbnails3 {
+        display: flex;
+        justify-content: center;
+
+        .main__img {
+            width: 100%;
+        }
+    }
+
+    .main__form__container {
+        display: grid;
+        grid-template-columns: repeat(5, auto);
+        grid-template-rows: repeat(3, auto);
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+            "main__form__title main__form__title main__form__title main__form__title main__form__title"
+            "img__form img__form img__form img__form img__form"
+            "main__form main__form main__form main__form main__form";
+        grid-area: main__form__container;
+        justify-content: center;
+        align-content: center;
+    }
+
+    .img__form {
+        grid-area: img__form;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .img__form__figure {
+            height: 250px;
+            margin-bottom: -2%;
+        }
+    }
+
+    .main__form__title {
+        grid-area: main__form__title;
+        margin-top: 5%;
+    }
+
+    .main__form {
+        grid-area: main__form;
+        width: 88vw;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        padding: 5vw;
+        margin-top: -10%;
+    }
+
+    .button__subscribe {
+        margin-top: 5%;
+    }
+
+    .form__field {
+        width: 90%;
+    }
+
+    .form__field__mail {
+        width: 90%;
+    }
+
+    .main__title__review {
+        grid-area: main__title__review;
+        display: flex;
+        justify-content: center;
+    }
+
+    .main__img__review {
+        grid-area: main__img__review;
+
+        .img__review {
+            width: 20vw;
+        }
+    }
+
+    .main__review {
+        grid-area: main__review;
+        padding: 5%;
+    }
+}
